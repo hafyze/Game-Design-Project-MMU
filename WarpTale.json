@@ -610,6 +610,56 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Open Font License/21bcfe4bb1045b82ecde51b2c493fc80da9496fb2f12e2e874a799d97505b795_Goldman-Regular.ttf",
           "name": "gdevelop-asset-store"
         }
+      },
+      {
+        "file": "victory sound.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "victory sound.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "[Video Soundtrack] Main Theme of Final Fantasy V [FINAL FANTASY V].mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "[Video Soundtrack] Main Theme of Final Fantasy V [FINAL FANTASY V].mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "sword_throw.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "sword_throw.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "teleporting.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "teleporting.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "teleport.MP3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "teleport.MP3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ]
   },
@@ -1419,7 +1469,35 @@
           }
         ]
       },
-      "events": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "victory sound.mp3",
+                "",
+                "15",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
       "layers": [
         {
           "ambientLightColorB": 200,
@@ -3367,6 +3445,17 @@
             "lineHeight": 0,
             "color": "15;23;42"
           }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "NewSprite",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": []
         }
       ],
       "objectsFolderStructure": {
@@ -3434,6 +3523,9 @@
           },
           {
             "objectName": "WarpText"
+          },
+          {
+            "objectName": "NewSprite"
           }
         ]
       },
@@ -3502,6 +3594,18 @@
               },
               "parameters": [
                 "WarpText"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "[Video Soundtrack] Main Theme of Final Fantasy V [FINAL FANTASY V].mp3",
+                "yes",
+                "10",
+                ""
               ]
             }
           ]
@@ -4624,6 +4728,18 @@
           "actions": [
             {
               "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "sword_throw.mp3",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
                 "value": "SetBooleanObjectVariable"
               },
               "parameters": [
@@ -4769,18 +4885,6 @@
           "actions": [
             {
               "type": {
-                "value": "SetXY"
-              },
-              "parameters": [
-                "Player",
-                "=",
-                "Sword.X()",
-                "=",
-                "Sword.Y()"
-              ]
-            },
-            {
-              "type": {
                 "value": "SetBooleanObjectVariable"
               },
               "parameters": [
@@ -4821,6 +4925,18 @@
                 "isThrown",
                 "False",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetXY"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "Sword.X()",
+                "=",
+                "Sword.Y()"
               ]
             }
           ]
